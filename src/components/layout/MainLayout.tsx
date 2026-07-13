@@ -14,7 +14,7 @@ function MainLayout() {
           </main>
         </div>
       </div>
-      <footer className="app-footer border-top bg-white py-3 px-4 text-muted d-flex justify-content-between align-items-center">
+      <footer className="app-footer border-top py-3 px-4 text-muted d-flex justify-content-between align-items-center">
         <span>© 2026 HELIS Commerce. Built for smooth store management.</span>
         {/* <span>Developed by Deepika Adabala</span> */}
         <small>Version 2.0.1</small>

@@ -47,7 +47,7 @@ const columns: GridColDef[] = [
     disableColumnMenu: true,
     headerAlign: 'center',
     align: 'center',
-    valueFormatter: ({ value }: any) => (value != null ? `Rs${Number(value).toFixed(2)}` : ''),
+    valueFormatter: ({ value }: any) => (value != null ? `₹ ${Number(value).toFixed(2)}` : ''),
   },
   {
     field: 'createdAt',
@@ -158,9 +158,9 @@ function Analytics() {
         </Box>
       </Box>
 
-      <Paper elevation={1} sx={{ p: 2, mb: 3, background: 'linear-gradient(135deg, #f7fbff 0%, #eef7ff 100%)' }}>
+      <Paper elevation={1} sx={{ p: 2, mb: 3, backgroundColor: 'var(--bg-panel)', borderRadius: 2 }}>
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={2} alignItems="center" sx={{ flexWrap: 'wrap' }}>
-          <FormControl sx={{ minWidth: 150, flex: '0 0 150px', backgroundColor: '#ffffff', borderRadius: 1, p: 0.75 }} size="small">
+          <FormControl sx={{ minWidth: 150, flex: '0 0 150px', backgroundColor: 'var(--bg-panel)', borderRadius: 1, p: 0.75 }} size="small">
             <InputLabel id="payment-status-label" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
               Payment Status
             </InputLabel>
@@ -180,7 +180,7 @@ function Analytics() {
             </Select>
           </FormControl>
 
-          <FormControl sx={{ minWidth: 150, backgroundColor: '#ffffff', borderRadius: 1, p: 0.75 }} size="small">
+          <FormControl sx={{ minWidth: 150, backgroundColor: 'var(--bg-panel)', borderRadius: 1, p: 0.75 }} size="small">
             <InputLabel id="customer-tier-label" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
               Customer Tier
             </InputLabel>
@@ -200,7 +200,7 @@ function Analytics() {
             </Select>
           </FormControl>
 
-          <FormControl sx={{ minWidth: 150, backgroundColor: '#ffffff', borderRadius: 1, p: 0.75 }} size="small">
+          <FormControl sx={{ minWidth: 150, backgroundColor: 'var(--bg-panel)', borderRadius: 1, p: 0.75 }} size="small">
             <InputLabel id="order-status-label" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
               Order Status
             </InputLabel>
@@ -220,7 +220,7 @@ function Analytics() {
             </Select>
           </FormControl>
 
-          <FormControl sx={{ minWidth: 150, backgroundColor: '#ffffff', borderRadius: 1, p: 0.75 }} size="small">
+          <FormControl sx={{ minWidth: 150, backgroundColor: 'var(--bg-panel)', borderRadius: 1, p: 0.75 }} size="small">
             <InputLabel id="product-category-label" sx={{ fontWeight: 700, lineHeight: 1.2 }}>
               Product Category
             </InputLabel>
@@ -245,7 +245,7 @@ function Analytics() {
             placeholder="Search by order ID, customer, tier, status, product or category"
             variant="outlined"
             size="small"
-            sx={{ minWidth: 280, maxWidth: 360, backgroundColor: '#ffffff', borderRadius: 1 }}
+            sx={{ minWidth: 280, maxWidth: 360, backgroundColor: 'var(--bg-panel)', borderRadius: 1 }}
             value={searchTerm}
             onChange={(event) => setSearchTerm(event.target.value)}
             onBlur={() => commitSearch(searchTerm)}
@@ -276,7 +276,7 @@ function Analytics() {
         </Stack>
       </Paper>
 
-      <Paper elevation={1} sx={{ width: '100%', p: 2, backgroundColor: '#ffffff' }}>
+      <Paper elevation={1} sx={{ width: '100%', p: 2, backgroundColor: 'var(--bg-panel)' }}>
         {error && (
           <Alert severity="error" sx={{ m: 2 }}>
             {error}
@@ -308,8 +308,8 @@ function Analytics() {
             disableSelectionOnClick
             sx={{
               '& .MuiDataGrid-columnHeader': {
-                backgroundColor: '#f8fbff',
-                color: '#1e3aa8',
+                backgroundColor: 'var(--bg-panel)',
+                color: 'var(--text-base)',
                 fontWeight: 700,
                 textTransform: 'capitalize',
                 justifyContent: 'center',

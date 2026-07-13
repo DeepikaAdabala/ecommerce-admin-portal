@@ -141,18 +141,20 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
       overflowY: 'auto',
       padding: '20px'
     }}>
-      <div className="bg-white" style={{ 
+      <div className="modal-panel" style={{ 
         width: '550px',
         maxWidth: '100%',
         maxHeight: '90vh',
         overflowY: 'auto',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.2)'
+        boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
+        backgroundColor: 'var(--bg-panel)',
+        color: 'var(--text-base)'
       }}>
         {/* Modal Header */}
         <div style={{ 
           padding: '20px 24px',
-          borderBottom: '1px solid #e0e0e0',
-          backgroundColor: '#fafafa',
+          borderBottom: '1px solid var(--border)',
+          backgroundColor: 'var(--bg-surface)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center'
@@ -163,14 +165,14 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
               fontSize: '18px', 
               fontWeight: 600,
               fontFamily: "'Segoe UI', Arial, sans-serif",
-              color: '#1a1a1a'
+              color: 'var(--text-base)'
             }}>
               {editingId ? 'Edit Customer' : 'Add New Customer'}
             </h4>
             <p style={{ 
               margin: '5px 0 0 0', 
               fontSize: '13px',
-              color: '#666',
+              color: 'var(--text-muted)',
               fontFamily: "'Segoe UI', Arial, sans-serif"
             }}>
               {editingId ? 'Update customer details' : 'Enter customer information'}
@@ -247,7 +249,7 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
             <div style={{ 
               marginTop: '24px',
               paddingTop: '20px',
-              borderTop: '1px solid #e0e0e0',
+              borderTop: '1px solid var(--border)',
               display: 'flex',
               justifyContent: 'flex-end',
               gap: '12px'
@@ -257,9 +259,9 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
                 onClick={onClose}
                 style={{
                   padding: '8px 20px',
-                  backgroundColor: 'white',
-                  border: '1px solid #ccc',
-                  color: '#333',
+                  backgroundColor: 'var(--bg-panel)',
+                  border: '1px solid var(--border)',
+                  color: 'var(--text-base)',
                   fontSize: '14px',
                   fontWeight: 500,
                   cursor: 'pointer',
@@ -267,10 +269,10 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
                   transition: 'all 0.2s'
                 }}
                 onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#f5f5f5';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--bg-panel-hover)';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'white';
+                  (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--bg-panel)';
                 }}
               >
                 Cancel
@@ -280,9 +282,9 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
                 disabled={isSubmitting}
                 style={{
                   padding: '8px 24px',
-                  backgroundColor: '#007bff',
-                  border: '1px solid #007bff',
-                  color: 'white',
+                  backgroundColor: 'var(--brand-primary)',
+                  border: '1px solid var(--brand-primary)',
+                  color: '#ffffff',
                   fontSize: '14px',
                   fontWeight: 500,
                   cursor: isSubmitting ? 'not-allowed' : 'pointer',
@@ -291,10 +293,10 @@ const CustomerFormModal = ({ show, onClose, onSubmit, form, onChange, errors, is
                   opacity: isSubmitting ? 0.6 : 1
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSubmitting) (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#0056b3';
+                  if (!isSubmitting) (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#2563eb';
                 }}
                 onMouseLeave={(e) => {
-                  if (!isSubmitting) (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#007bff';
+                  if (!isSubmitting) (e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--brand-primary)';
                 }}
               >
                 {isSubmitting ? 'Saving...' : 'Add Customer'}
@@ -386,7 +388,7 @@ function Customers() {
   };
 
   return (
-    <div>
+    <div className="page-customers">
       {alert && (
         <ColorfulAlert 
           type={alert.type} 
@@ -427,7 +429,7 @@ function Customers() {
         </div>
       )}
       
-      <div className="table-responsive shadow-sm rounded bg-white mb-4">
+      <div className="table-responsive shadow-sm rounded mb-4" style={{ backgroundColor: 'var(--bg-panel)' }}>
         <table className="table mb-0 align-middle">
           <thead>
             <tr>
@@ -449,7 +451,7 @@ function Customers() {
                   </span>
                 </td>
                 <td>{customer.lastOrder}</td>
-                <td>Rs{customer.lifetimeValue.toFixed(2)}</td>
+                <td>₹ {customer.lifetimeValue.toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

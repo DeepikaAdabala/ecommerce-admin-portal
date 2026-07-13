@@ -115,23 +115,25 @@ const ConfirmationModal = ({ show, onConfirm, onCancel, productTitle }: Confirma
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-      <div className="bg-white" style={{ 
+      <div className="modal-panel" style={{ 
         width: '450px',
         maxWidth: '90%',
-        boxShadow: '0 10px 40px rgba(0,0,0,0.2)'
+        boxShadow: '0 10px 40px rgba(0,0,0,0.2)',
+        backgroundColor: 'var(--bg-panel)',
+        color: 'var(--text-base)'
       }}>
         {/* Modal Header */}
         <div style={{ 
           padding: '20px 24px',
-          borderBottom: '1px solid #e0e0e0',
-          backgroundColor: '#fafafa'
+          borderBottom: '1px solid var(--border)',
+          backgroundColor: 'var(--bg-surface)'
         }}>
           <h4 style={{ 
             margin: 0, 
             fontSize: '18px', 
             fontWeight: 600,
             fontFamily: "'Segoe UI', Arial, sans-serif",
-            color: '#1a1a1a'
+            color: 'var(--text-base)'
           }}>
             Confirm Deletion
           </h4>
@@ -143,17 +145,17 @@ const ConfirmationModal = ({ show, onConfirm, onCancel, productTitle }: Confirma
             margin: '0 0 8px 0', 
             fontSize: '14px',
             fontFamily: "'Segoe UI', Arial, sans-serif",
-            color: '#333'
+            color: 'var(--text-base)'
           }}>
             Are you sure you want to delete product <strong>"{productTitle}"</strong>?
           </p>
           <div style={{ 
             marginTop: '16px', 
             padding: '12px', 
-            backgroundColor: '#fff3cd',
+            backgroundColor: 'var(--bg-warning)',
             borderLeft: '3px solid #ffc107'
           }}>
-            <span style={{ fontSize: '13px', color: '#856404' }}>
+            <span style={{ fontSize: '13px', color: 'var(--text-warning)' }}>
               ⚠ This action cannot be undone.
             </span>
           </div>
@@ -162,8 +164,8 @@ const ConfirmationModal = ({ show, onConfirm, onCancel, productTitle }: Confirma
         {/* Modal Footer */}
         <div style={{ 
           padding: '16px 24px',
-          borderTop: '1px solid #e0e0e0',
-          backgroundColor: '#fafafa',
+          borderTop: '1px solid var(--border)',
+          backgroundColor: 'var(--bg-surface)',
           display: 'flex',
           justifyContent: 'flex-end',
           gap: '12px'
@@ -172,9 +174,9 @@ const ConfirmationModal = ({ show, onConfirm, onCancel, productTitle }: Confirma
             onClick={onCancel}
             style={{
               padding: '8px 20px',
-              backgroundColor: 'white',
-              border: '1px solid #ccc',
-              color: '#333',
+              backgroundColor: 'var(--bg-panel)',
+              border: '1px solid var(--border)',
+              color: 'var(--text-base)',
               fontSize: '14px',
               fontWeight: 500,
               cursor: 'pointer',
@@ -360,7 +362,7 @@ function ProductDetail() {
               <p className="text-muted mt-3 mb-0">Created at {new Date(product.createdAt).toLocaleDateString()}</p>
             </div>
             <div className="text-end">
-              <h3 className="mb-1">Rs{product.price.toFixed(2)}</h3>
+              <h3 className="mb-1">₹ {product.price.toFixed(2)}</h3>
               <p className="text-muted mb-0">Inventory {product.inventory}</p>
             </div>
           </div>

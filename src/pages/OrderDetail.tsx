@@ -75,7 +75,7 @@ function OrderDetail() {
           </div>
           <div className="col-12 col-md-6">
             <div className="fw-semibold text-muted mb-1">Order Total</div>
-            <div>Rs{order.total.toFixed(2)}</div>
+            <div>₹ {order.total.toFixed(2)}</div>
           </div>
           <div className="col-12 col-md-6">
             <div className="fw-semibold text-muted mb-1">Order Date</div>

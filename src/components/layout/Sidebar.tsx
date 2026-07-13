@@ -32,7 +32,7 @@ function Sidebar() {
   const expanded = useAppSelector((state) => state.layout.sidebarExpanded);
 
   return (
-    <nav className={`sidebar bg-white border-end ${expanded ? 'expanded' : 'collapsed'}`}>
+    <nav className={`sidebar border-end ${expanded ? 'expanded' : 'collapsed'}`}>
       <div className={`sidebar-inner ${expanded ? 'expanded' : 'collapsed'}`}>
         <div className="sidebar-toggle p-2 d-flex justify-content-end">
           <button type="button" className="btn btn-sm btn-outline-primary" onClick={() => dispatch(toggleSidebarExpanded())}>

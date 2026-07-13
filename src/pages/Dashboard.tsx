@@ -42,7 +42,7 @@ function Dashboard() {
     .slice(0, 5);
 
   const formatCurrency = (value: number | string | undefined) =>
-    `Rs${Number(value ?? 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
+    `₹ ${Number(value ?? 0).toLocaleString('en-IN', { maximumFractionDigits: 0 })}`;
 
   return (
     <div className="page-dashboard">
@@ -93,7 +93,7 @@ function Dashboard() {
                 label={`Revenue in  ${revenuePeriod === 'year' ? 'by quarter' : revenuePeriod === 'month' ? 'by week' : revenuePeriod === 'week' ? 'by day' : 'by time'}`}
                 isVertical={true}
                 xAxisLabel={revenuePeriod === 'year' ? 'Quarter' : revenuePeriod === 'week' ? 'Day' : revenuePeriod === 'month' ? 'Days' : 'Hour'}
-                yAxisLabel="Revenue in Rs"
+                yAxisLabel="Revenue in ₹"
               />
             </div>
           </div>

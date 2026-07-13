@@ -81,7 +81,7 @@ function Products() {
           {filtered.map((product) => (
             <div className="col-12 col-md-6 col-xl-4" key={product.id}>
               <Link to={`/products/${product.id}`} className="text-decoration-none">
-                <Card title={product.title} value={`Rs${product.price.toFixed(2)}`}>
+                <Card title={product.title} value={`₹ ${product.price.toFixed(2)}`}>
                   <div className="d-flex flex-wrap gap-2 mb-3">
                     <span className={`badge ${product.status === 'active' ? 'bg-success' : 'bg-secondary'}`}>
                       {product.status}
@@ -119,7 +119,7 @@ function Products() {
                       </Link>
                       <div className="text-muted small">SKU {product.sku}</div>
                     </td>
-                    <td>Rs{product.price.toFixed(2)}</td>
+                    <td>₹ {product.price.toFixed(2)}</td>
                     <td>{product.inventory}</td>
                     <td>{product.category}</td>
                     <td>

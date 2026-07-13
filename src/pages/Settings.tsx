@@ -23,7 +23,7 @@ function Settings() {
       </div>
 
       <Stack spacing={3}>
-        <div className="border rounded p-3 bg-white">
+        <div className="border rounded p-3" style={{ backgroundColor: 'var(--bg-panel)' }}>
           <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={2}>
             <div>
               <Typography variant="h6" gutterBottom>
@@ -39,7 +39,7 @@ function Settings() {
           </Stack>
         </div>
 
-        <div className="border rounded p-3 bg-white">
+        <div className="border rounded p-3" style={{ backgroundColor: 'var(--bg-panel)' }}>
           <Typography variant="h6" gutterBottom>
             Sidebar layout
           </Typography>
@@ -54,7 +54,7 @@ function Settings() {
           </FormControl>
         </div>
 
-        <div className="border rounded p-3 bg-white">
+        <div className="border rounded p-3" style={{ backgroundColor: 'var(--bg-panel)' }}>
           <Typography variant="h6" gutterBottom>
             Application theme
           </Typography>

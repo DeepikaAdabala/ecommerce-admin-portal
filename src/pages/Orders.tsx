@@ -97,7 +97,7 @@ function Orders() {
       )}
 
       <div className="card border-0 shadow-sm overflow-hidden">
-        <div className="card-header bg-white border-bottom py-3">
+        <div className="card-header border-bottom py-3">
           <div className="d-flex justify-content-between align-items-center">
             <div>
               <h5 className="mb-1">Order list</h5>
@@ -106,7 +106,7 @@ function Orders() {
         </div>
         <div className="table-responsive">
           <table className="table table-hover align-middle mb-0">
-            <thead className="text-muted small text-uppercase bg-light">
+            <thead className="text-muted small text-uppercase">
               <tr>
                 <th className="py-3">Order ID</th>
                 <th className="py-3">Customer</th>
@@ -129,7 +129,7 @@ function Orders() {
                   <td>{order.customerName}</td>
                   <td className="text-muted">{order.productTitle || 'Product unavailable'}</td>
                   <td>{order.quantity || 1}</td>
-                  <td>{order.total != null ? `Rs${order.total.toFixed(2)}` : 'N/A'}</td>
+                  <td>{order.total != null ? `₹ ${order.total.toFixed(2)}` : 'N/A'}</td>
                   <td>
                     <span className={statusClass[order.status] || 'badge bg-secondary rounded-pill'}>{order.status || 'Unknown'}</span>
                   </td>

@@ -96,7 +96,7 @@ function AddOrder() {
               />
             </div>
             <div className="col-12 col-md-6">
-              <label className="form-label">Total (Rs)</label>
+              <label className="form-label">Total (₹)</label>
               <input 
                 name="total" 
                 type="number" 
