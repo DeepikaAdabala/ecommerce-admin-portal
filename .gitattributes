@@ -1,0 +1,16 @@
+* text=auto
+
+# Enforce LF for all shell scripts and binaries
+*.sh eol=lf
+*.bash eol=lf
+.bin/** eol=lf
+
+# Ensure these files maintain LF endings
+package.json eol=lf
+package-lock.json eol=lf
+tsconfig.json eol=lf
+vite.config.ts eol=lf
+
+# Preserve permissions for executables
+.bin/** filter=delta diff=delta
+node_modules/.bin/** filter=delta diff=delta
